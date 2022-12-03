@@ -6,7 +6,7 @@
 import os
 script_dir = os.path.dirname(__file__)
 
-with open(script_dir + "/input1.txt", "r") as file:
+with open(script_dir + "/input.txt", "r") as file:
     inventory = file.read()
 
 elves = [elem.split("\n") for elem in inventory.split("\n\n")]
