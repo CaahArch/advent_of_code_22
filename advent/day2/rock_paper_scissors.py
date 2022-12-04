@@ -4,13 +4,9 @@ score_per_win = {"lose" : 0,
     "draw" : 3,
     "win": 6}
 
+from advent.daily import read_input
 
-import os
-script_dir = os.path.dirname(__file__)
-
-# read input into list
-with open(script_dir + "/input.txt", "r") as file:
-    inventory = file.read().strip()
+inventory = read_input()
 rounds = [elem.split(" ") for elem in inventory.split("\n")]
 # print(rounds)
 

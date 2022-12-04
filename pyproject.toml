@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "advent"
+version = "0.1.0"
+description = "Caah's first try to tackle the advent of code"
+authors = ["Caah Arch <caah135@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

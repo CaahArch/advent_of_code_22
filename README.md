@@ -9,3 +9,13 @@ GOAL: Practive conding
 Optional:
 - Set up pre-commit hooks
 - Set up pytests
+
+## Setup poetry
+```
+$PYTHON -m pip install --upgrade pip
+$PYTHON -m pip install poetry
+$PYTHON -m venev env
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\env\Scripts\Activate.ps1
+$PYTHON -m poetry install
+```
