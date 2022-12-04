@@ -1,6 +1,7 @@
 
 input.txt
 
+.vscode/
 env/
 __pycache__
 poetry.lock
