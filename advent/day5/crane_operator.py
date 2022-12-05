@@ -26,6 +26,11 @@ def move_crate(amount:int, origin:int, target:int, stacks:list):
         stacks[target-1].insert(0, *moving)
     return stacks
 
+def move_crate_9001(amount:int, origin:int, target:int, stacks:list):
+    moving = stacks[origin-1][:amount]
+    stacks[target-1] = moving + stacks[target-1]
+    del stacks[origin-1][:amount]
+
 def main():
     crates, move_intructions = read_input().split("\n 1   2   3   4   5   6   7   8   9 \n\n")
 
@@ -33,7 +38,7 @@ def main():
     moves = parse_move_instructions(move_intructions)
 
     for m in moves:
-        move_crate(*m, stacks)
+        move_crate_9001(*m, stacks)
 
     print(f"Solution 1: {''.join([x[0] for x in stacks])}")
 
