@@ -21,7 +21,26 @@ def main():
 
     dirs.show()
     print(f"Solution 1: {result}")
-    # TODO too high
+
+
+def main_b():
+    commands = read_input()
+    dirs = parse(commands)
+    root_node = dirs.get_node(dirs.root)
+    calc_size(root_node, dirs)
+
+    total_space = 70000000
+    need = 30000000
+    unused = total_space - root_node.data.dir_size - root_node.data.file_size
+    delete_at_most = need - unused
+
+    to_be_deleted = total_space
+    for d in dirs.all_nodes_itr():
+        size = d.data.dir_size + d.data.file_size
+        if delete_at_most <= size <= to_be_deleted:
+            to_be_deleted = size
+
+    print(f"Solution 2: {to_be_deleted}")
 
 
 def parse(input:str) -> Tree:
@@ -57,4 +76,4 @@ def calc_size(node: Node, tree: Tree):
 
 
 if __name__ == "__main__":
-    main()
+    main_b()
